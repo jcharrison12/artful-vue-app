@@ -5,6 +5,8 @@ import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import ImagesIndex from "../views/ImagesIndex.vue";
+import ImagesShow from "../views/ImagesShow.vue";
+import GalleriesIndex from "../views/GalleriesIndex.vue";
 
 Vue.use(VueRouter);
 
@@ -26,6 +28,8 @@ const routes = [
   { path: "/login", name: "login", component: Login },
   { path: "/logout", name: "logout", component: Logout },
   { path: "/images", name: "images-index", component: ImagesIndex },
+  { path: "/images/:id", name: "images-show", component: ImagesShow },
+  { path: "/galleries", name: "galleries-index", component: GalleriesIndex },
 ];
 
 const router = new VueRouter({

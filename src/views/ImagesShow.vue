@@ -6,6 +6,16 @@
       <h2>{{ image.artist }}</h2>
       <p>{{ image.museum }}</p>
       <p>{{ image.description }}</p>
+      <button v-on:click="addToGallery()">Add to your Gallery</button>
+      <dialog id="galleryNotes">
+        <form method="dialog">Write a note about this piece of art:</form>
+        <textarea v-model="galleryParams.notes"></textarea>
+        Have you seen this in person?
+        <input type="checkbox" v-model="galleryParams.seen" />
+        <button v-on:click="galleryCreate()">Submit to gallery</button>
+        <button>Close</button>
+        <h2 v-if="errors.length > 0">{{ errors }}</h2>
+      </dialog>
       <router-link to="/images">Back to all images</router-link>
     </div>
   </div>
@@ -18,6 +28,8 @@ export default {
   data: function () {
     return {
       image: [],
+      galleryParams: { seen: false },
+      errors: {},
     };
   },
   created: function () {
@@ -26,6 +38,24 @@ export default {
       console.log(response.data);
     });
   },
-  methods: {},
+  methods: {
+    addToGallery: function () {
+      document.querySelector("#galleryNotes").showModal();
+    },
+    galleryCreate: function () {
+      this.galleryParams.user_id = this.$parent.getUserId();
+      this.galleryParams.image_id = this.image.id;
+      axios
+        .post("/galleries", this.galleryParams)
+        .then((response) => {
+          console.log(response.data);
+          this.$router.push("/");
+        })
+        .catch((errors) => {
+          this.errors = errors.response.data.errors;
+          console.log(this.errors);
+        });
+    },
+  },
 };
 </script>

@@ -5,7 +5,9 @@
     <br />
     <br />
     <div v-for="image in filterBy(images, searchTerm)" :key="image.id">
-      <img :src="image.image_url" :alt="image.title" />
+      <router-link v-bind:to="`/images/${image.id}`">
+        <img :src="image.image_url" :alt="image.title" />
+      </router-link>
       <h1>{{ image.title }}</h1>
       <h2>{{ image.artist }}</h2>
       <h2>{{ image.museum }}</h2>
