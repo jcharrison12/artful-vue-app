@@ -1,14 +1,13 @@
 <template>
   <div class="home">
     <h1>Your Gallery</h1>
-    <h2>{{ user }}</h2>
-    <!-- <div v-for="image in user.images" :key="image.id">
-      <div v-for="index in indexes" :key="index.id">
-        <h2>{{ index.image }}</h2>
-        <h2>{{ index.notes }}</h2>
-      </div> -->
-    <div v-for="(gallery, index) in user.galleries" :key="gallery.id">
-      <!-- <div>{{ user }}</div> -->
+    <!-- <h2>{{ user }}</h2> -->
+    <!-- <div v-for="image in user.images" :key="image.id"> -->
+    <!-- <div v-for="index in indexes" :key="index.id">
+      <img :src="index.image" />
+      <h2>{{ index.notes }}</h2>
+    </div> -->
+    <div v-for="(gallery, index) in galleries" :key="gallery.id">
       <img :src="images[index].image_url" />
       <h1>{{ images[index].title }}</h1>
       <h2>{{ images[index].artist }}</h2>
@@ -25,6 +24,7 @@
       </p>
     </div>
   </div>
+  <!-- </div> -->
 </template>
 
 <style></style>
@@ -37,6 +37,7 @@ export default {
     return {
       user: [],
       images: [],
+      galleries: [],
       indices: [],
       array: [],
     };
@@ -44,16 +45,16 @@ export default {
   created: function () {
     this.userHome();
   },
-  // computed: {
-  //   indexes() {
-  //     return this.indices.map((index, i) => {
-  //       return {
-  //         image: this.images[index],
-  //         notes: this.galleries[i].notes,
-  //       };
-  //     });
-  //   },
-  // },
+  computed: {
+    indexes() {
+      return this.indices.map((index, i) => {
+        return {
+          image: this.images[index],
+          notes: this.galleries[i].notes,
+        };
+      });
+    },
+  },
   methods: {
     userHome: function () {
       var user_id = this.$parent.getUserId();
@@ -64,8 +65,15 @@ export default {
           console.log(response.data);
           this.user = response.data;
           this.images = response.data.images;
-          this.indices = response.data.galleries.map((object) => object.image_id);
-          console.log(this.indices);
+          this.images.sort((x, y) => {
+            x.id - y.id;
+          });
+          this.galleries = response.data.galleries;
+          this.galleries.sort(function (a, b) {
+            return a.image_id - b.image_id;
+          });
+          console.log(this.galleries);
+          console.log(this.images);
         })
         .catch((error) => {
           console.log(error);

@@ -2,8 +2,12 @@
   <div id="galleries-index">
     <h1>Browse galleries</h1>
     <div v-for="user in users" :key="user.id">
-      <p>{{ user.username }}'s Gallery</p>
-      <div v-for="image in images" :key="image.id"></div>
+      <h2>{{ user.username }}'s Gallery</h2>
+      <div v-for="image in user.images" :key="image.id">
+        <router-link v-bind:to="`/images/${image.id}`">
+          <img :src="image.image_url" />
+        </router-link>
+      </div>
     </div>
   </div>
 </template>

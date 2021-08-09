@@ -8,13 +8,15 @@
       <p>{{ image.description }}</p>
       <button v-on:click="addToGallery()">Add to your Gallery</button>
       <dialog id="galleryNotes">
-        <form method="dialog">Write a note about this piece of art:</form>
-        <textarea v-model="galleryParams.notes"></textarea>
-        Have you seen this in person?
-        <input type="checkbox" v-model="galleryParams.seen" />
-        <button v-on:click="galleryCreate()">Submit to gallery</button>
-        <button>Close</button>
-        <h2 v-if="errors.length > 0">{{ errors }}</h2>
+        <form method="dialog">
+          Write a note about this piece of art:
+          <textarea v-model="galleryParams.notes"></textarea>
+          Have you seen this in person?
+          <input type="checkbox" v-model="galleryParams.seen" />
+          <button v-on:click="galleryCreate()">Submit to gallery</button>
+          <h2 v-if="errors.length > 0">{{ errors }}</h2>
+          <button>Close</button>
+        </form>
       </dialog>
       <router-link to="/images">Back to all images</router-link>
     </div>
