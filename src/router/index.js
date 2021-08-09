@@ -7,6 +7,7 @@ import Logout from "../views/Logout.vue";
 import ImagesIndex from "../views/ImagesIndex.vue";
 import ImagesShow from "../views/ImagesShow.vue";
 import GalleriesIndex from "../views/GalleriesIndex.vue";
+import GalleriesShow from "../views/GalleriesShow.vue";
 
 Vue.use(VueRouter);
 
@@ -30,6 +31,7 @@ const routes = [
   { path: "/images", name: "images-index", component: ImagesIndex },
   { path: "/images/:id", name: "images-show", component: ImagesShow },
   { path: "/galleries", name: "galleries-index", component: GalleriesIndex },
+  { path: "/galleries/:id", name: "galleries-show", component: GalleriesShow },
 ];
 
 const router = new VueRouter({

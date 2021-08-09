@@ -6,7 +6,7 @@
       <h2>{{ image.artist }}</h2>
       <p>{{ image.museum }}</p>
       <p>{{ image.description }}</p>
-      <button v-on:click="addToGallery()">Add to your Gallery</button>
+      <button v-if="$parent.isLoggedIn()" v-on:click="addToGallery()">Add to your Gallery</button>
       <dialog id="galleryNotes">
         <form method="dialog">
           Write a note about this piece of art:
