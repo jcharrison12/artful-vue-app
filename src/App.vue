@@ -13,7 +13,7 @@
       |
       <router-link to="/images">Images</router-link>
       |
-      <router-link to="/galleries">Galleries</router-link>
+      <router-link v-if="isLoggedIn()" to="/galleries">Galleries</router-link>
     </div>
     <router-view />
   </div>
