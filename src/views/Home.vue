@@ -9,15 +9,15 @@
     </div> -->
     <div v-for="(gallery, index) in galleries" :key="gallery.id">
       <img :src="images[index].image_url" />
-      <h1>{{ images[index].title }}</h1>
-      <h2>{{ images[index].artist }}</h2>
-      <h2>{{ images[index].museum }}</h2>
-      <p>
+      <h1 class="center">{{ images[index].title }}</h1>
+      <h2 class="center">{{ images[index].artist }}</h2>
+      <h2 class="center">{{ images[index].museum }}</h2>
+      <p class="center">
         <strong>Your notes:</strong>
         {{ gallery.notes }}
       </p>
-      <p v-if="gallery.seen == true">You have seen this art in person.</p>
-      <p v-else>
+      <p class="center" v-if="gallery.seen == true">You have seen this art in person.</p>
+      <p class="center" v-else>
         You have
         <strong>not</strong>
         seen this art in person.

@@ -41,14 +41,14 @@
               <li v-if="!isLoggedIn()"><a href="/signup">Signup</a></li>
               <li v-if="!isLoggedIn()"><a href="/login">Login</a></li>
               <li v-if="isLoggedIn()"><a href="/logout">Logout</a></li>
-              <li class="menu-has-children">
+              <!-- <li class="menu-has-children">
                 <a href="">Pages</a>
                 <ul>
                   <li><a href="blog-single.html">Blog Single</a></li>
                   <li><a href="category.html">Category</a></li>
                   <li><a href="elements.html">Elements</a></li>
                 </ul>
-              </li>
+              </li> -->
             </ul>
           </nav>
           <!-- #nav-menu-container -->
@@ -63,13 +63,13 @@
           <div class="banner-content col-lg-8">
             <h1 class="text-white">Artful: An Art Appreciation App</h1>
             <p class="pt-20 pb-20 text-white">Save your favorite pieces of art in your very own personal gallery!</p>
-            <a href="#" class="primary-btn text-uppercase">Get Started</a>
+            <!-- <a href="#" class="primary-btn text-uppercase">Get Started</a> -->
           </div>
         </div>
       </div>
     </section>
     <!-- End banner Area -->
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link>
       |
       <router-link to="/about">About</router-link>
@@ -83,7 +83,7 @@
       <router-link to="/images">Images</router-link>
       |
       <router-link v-if="isLoggedIn()" to="/galleries">Galleries</router-link>
-    </div>
+    </div> -->
     <router-view />
     <footer class="footer-area section-gap">
       <div class="container">
