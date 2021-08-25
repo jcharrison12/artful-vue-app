@@ -9,6 +9,7 @@ import ImagesShow from "../views/ImagesShow.vue";
 import GalleriesIndex from "../views/GalleriesIndex.vue";
 import GalleriesShow from "../views/GalleriesShow.vue";
 import GalleriesNew from "../views/GalleriesNew.vue";
+import GalleriesEdit from "../views/GalleriesEdit.vue";
 
 Vue.use(VueRouter);
 
@@ -34,6 +35,7 @@ const routes = [
   { path: "/galleries", name: "galleries-index", component: GalleriesIndex },
   { path: "/galleries/:id", name: "galleries-show", component: GalleriesShow },
   { path: "/images/:id/edit", name: "galleries-new", component: GalleriesNew },
+  { path: "/yourgallery/:id", name: "galleries-edit", component: GalleriesEdit },
 ];
 
 const router = new VueRouter({

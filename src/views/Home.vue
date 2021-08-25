@@ -34,6 +34,9 @@
                 <p class="card-text">
                   <small class="text-muted">at {{ images[index].museum }}</small>
                 </p>
+                <router-link v-bind:to="`/yourgallery/${gallery.id}`">
+                  <button>Edit</button>
+                </router-link>
               </div>
             </div>
           </div>
