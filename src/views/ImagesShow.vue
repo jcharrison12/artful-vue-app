@@ -14,23 +14,6 @@
           <router-link to="/images"><button class="genric-btn info">Back to all images</button></router-link>
         </div>
       </div>
-      <!-- <h2>{{ image.title }}</h2>
-      <img :src="image.image_url" :alt="image.title" />
-      <h2>{{ image.artist }}</h2>
-      <p>{{ image.museum }}</p>
-      <p>{{ image.description }}</p> -->
-
-      <!-- <dialog id="galleryNotes">
-        <form method="dialog">
-          Write a note about this piece of art:
-          <textarea v-model="galleryParams.notes"></textarea>
-          Have you seen this in person?
-          <input type="checkbox" v-model="galleryParams.seen" />
-          <button v-on:click="galleryCreate()">Submit to gallery</button>
-          <h2 v-if="errors.length > 0">{{ errors }}</h2>
-          <button>Close</button>
-        </form>
-      </dialog> -->
     </div>
   </div>
 </template>

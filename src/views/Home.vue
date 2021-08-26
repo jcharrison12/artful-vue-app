@@ -35,84 +35,14 @@
                   <small class="text-muted">at {{ images[index].museum }}</small>
                 </p>
                 <router-link v-bind:to="`/yourgallery/${gallery.id}`">
-                  <button>Edit</button>
+                  <button class="genric-btn primary">Edit</button>
                 </router-link>
               </div>
             </div>
           </div>
         </div>
-        <!-- <div class="card-deck">
-          <div v-for="(gallery, index) in galleries" :key="gallery.id">
-            <div class="card">
-              <img class="card-img-top" :src="images[index].image_url" alt="" />
-              <h4>{{ images[index].title }}</h4>
-              <h6>
-                <span>{{ images[index].artist }}</span>
-                at {{ images[index].museum }}
-              </h6>
-              <p>
-                <strong>Your notes:</strong>
-                {{ gallery.notes }}
-              </p>
-              <p v-if="gallery.seen == true">You have seen this art in person.</p>
-              <p v-else>
-                You have
-                <strong>not</strong>
-                seen this art in person.
-              </p>
-             <a href="#" class="primary-btn text-uppercase">View Details</a> -->
-        <!-- <div class="col-lg-6 event-right">
-            <div class="single-events">
-              <a href="#"><h4>Event on the rock solid carbon</h4></a>
-              <h6>
-                <span>21st February</span>
-                at Central government museum
-              </h6>
-              <p>
-                inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-                especially.
-              </p>
-              <a href="#" class="primary-btn text-uppercase">View Details</a>
-              <img class="img-fluid" src="img/u2.jpg" alt="" />
-            </div>
-            <div class="single-events">
-              <a href="#"><h4>Event on the rock solid carbon</h4></a>
-              <h6>
-                <span>21st February</span>
-                at Central government museum
-              </h6>
-              <p>
-                inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-                especially.
-              </p>
-              <a href="#" class="primary-btn text-uppercase">View Details</a>
-              <img class="img-fluid" src="img/u4.jpg" alt="" />
-            </div> -->
       </div>
     </section>
-    <!-- End upcoming-event Area -->
-    <!-- <h2>{{ user }}</h2> -->
-    <!-- <div v-for="image in user.images" :key="image.id"> -->
-    <!-- <div v-for="index in indexes" :key="index.id">
-      <img :src="index.image" />
-      <h2>{{ index.notes }}</h2>
-    </div> -->
-    <!-- <div v-for="(gallery, index) in galleries" :key="gallery.id">
-      <img :src="images[index].image_url" />
-      <h1 class="center">{{ images[index].title }}</h1>
-      <h2 class="center">{{ images[index].artist }}</h2>
-      <h2 class="center">{{ images[index].museum }}</h2>
-      <p class="center">
-        <strong>Your notes:</strong>
-        {{ gallery.notes }}
-      </p>
-      <p class="center" v-if="gallery.seen == true">You have seen this art in person.</p>
-      <p class="center" v-else>
-        You have
-        <strong>not</strong>
-        seen this art in person.
-      </p>
-    </div> -->
   </div>
   <!-- </div> -->
 </template>

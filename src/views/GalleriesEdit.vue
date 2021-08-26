@@ -28,8 +28,8 @@
                 <label for="primary-checkbox"></label>
               </div>
             </div>
-            <input type="submit" value="Submit" />
-            <button v-on:click="destroyGallery()">Remove from Gallery</button>
+            <input class="genric-btn success" type="submit" value="Submit" />
+            <button class="genric-btn danger" v-on:click="destroyGallery()">Remove from Gallery</button>
           </form>
         </div>
       </div>

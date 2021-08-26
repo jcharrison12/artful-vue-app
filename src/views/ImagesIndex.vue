@@ -23,15 +23,6 @@
     <!-- <input type="text" v-model="searchTerm" /> -->
     <br />
     <br />
-    <!-- <div v-for="image in filterBy(images, searchTerm)" :key="image.id">
-      <router-link v-bind:to="`/images/${image.id}`">
-        <img :src="image.image_url" :alt="image.title" />
-      </router-link>
-      <h1>{{ image.title }}</h1>
-      <h2>{{ image.artist }}</h2>
-      <h2>{{ image.museum }}</h2>
-      <p>{{ image.description }}</p>
-    </div> -->
     <div class="card">
       <div class="center" v-for="image in filterBy(images, searchTerm)" :key="image.id">
         <router-link v-bind:to="`/images/${image.id}`">

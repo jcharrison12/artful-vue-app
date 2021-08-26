@@ -29,22 +29,14 @@
               </div>
             </div>
             <input type="submit" value="Submit" />
+            <div v-if="errors.length > 0">
+              <div v-for="error in errors" :key="error.id">
+                <h2 class="text-danger">{{ error }}</h2>
+              </div>
+            </div>
           </form>
         </div>
       </div>
-      <!-- <img :src="image.image_url" alt="" />
-      <form v-on:submit.prevent="galleryCreate()">
-        <h1>Add to Gallery</h1>
-        <div>
-          <label>Notes:</label>
-          <textarea v-model="galleryParams.notes">Type your notes about the art here.</textarea>
-        </div>
-        <div>
-          <label>Have you seen this art in person?</label>
-          <input type="checkbox" v-model="galleryParams.seen" />
-        </div>
-        <input type="submit" value="Submit" />
-      </form> -->
     </div>
   </div>
 </template>
