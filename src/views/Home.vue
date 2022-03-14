@@ -1,9 +1,5 @@
 <template>
   <div class="home">
-    <!-- Start upcoming-event Area -->
-
-    <!-- End upcoming-event Area -->
-    <!-- Start upcoming-event Area -->
     <section class="upcoming-event-area section-gap" id="events">
       <div class="container">
         <div class="row d-flex justify-content-center">
